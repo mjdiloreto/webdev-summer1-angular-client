@@ -23,12 +23,8 @@
 
   <ul class="list-group">
     <li *ngFor="let enrollment of sections" class="list-group-item">
-      {{enrollment.section.name}}
+      <a routerLink="/course/{{enrollment.section.courseId}}">{{enrollment.section.name}}</a>
       ({{enrollment.section.seats}})
     </li>
   </ul>
-
-  <a (click)="logout()">Logout</a>
-  <a routerLink="/home">Home</a>
-
 </div>

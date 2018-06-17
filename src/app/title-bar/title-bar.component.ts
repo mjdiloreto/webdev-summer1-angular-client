@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServiceClient } from "../services/user.service.client";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-title-bar',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TitleBarComponent implements OnInit {
 
-  constructor() { }
+  loggedIn;
 
-  ngOnInit() {
+  constructor(private service: UserServiceClient,
+              private router: Router) { }
+
+  logout() {
+    this.service
+      .logout()
+      .then(() =>
+        this.router.navigate(['login']));
   }
 
+  ngOnInit() {
+    this.service
+      .profile()
+      .then(user => {
+        user ? this.loggedIn = true : this.loggedIn = false;
+          console.log(this.loggedIn);
+        }
+      )
+  }
 }
+

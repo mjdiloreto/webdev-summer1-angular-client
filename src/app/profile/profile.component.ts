@@ -24,14 +24,6 @@ export class ProfileComponent implements OnInit {
     console.log(user);
   }
 
-  logout() {
-    this.service
-      .logout()
-      .then(() =>
-        this.router.navigate(['login']));
-
-  }
-
   ngOnInit() {
     this.service
       .profile()
@@ -42,5 +34,4 @@ export class ProfileComponent implements OnInit {
       .findSectionsForStudent()
       .then(sections => this.sections = sections );
   }
-
 }
