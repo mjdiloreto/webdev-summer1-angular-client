@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 export class TitleBarComponent implements OnInit {
 
   loggedIn;
+  admin;
 
   constructor(private service: UserServiceClient,
               private router: Router) { }
@@ -26,7 +27,7 @@ export class TitleBarComponent implements OnInit {
       .profile()
       .then(user => {
         user ? this.loggedIn = true : this.loggedIn = false;
-          console.log(this.loggedIn);
+        user.username === "admin" ? this.admin = true : this.admin = false;
         }
       )
   }

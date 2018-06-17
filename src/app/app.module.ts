@@ -24,6 +24,8 @@ import {UserServiceClient} from "./services/user.service.client";
 import { SectionListComponent } from './section-list/section-list.component';
 import {SectionServiceClient} from "./services/section.service.client";
 import { TitleBarComponent } from './title-bar/title-bar.component';
+import { AdminComponent } from './admin/admin.component';
+import { SectionCreatorComponent } from './section-creator/section-creator.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { TitleBarComponent } from './title-bar/title-bar.component';
     RegisterComponent,
     ProfileComponent,
     SectionListComponent,
-    TitleBarComponent
+    TitleBarComponent,
+    AdminComponent,
+    SectionCreatorComponent,
   ],
   imports: [
     BrowserModule,
