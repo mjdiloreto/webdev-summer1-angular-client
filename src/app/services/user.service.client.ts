@@ -61,4 +61,10 @@ export class UserServiceClient {
       }
     })
   }
+
+  findUserByUsername(username) {
+    return fetch('http://localhost:4000/api/user' + "?username=" + username, {
+        credentials: 'include' // include, same-origin, *omit
+      }).then(response => response.json());
+  }
 }
