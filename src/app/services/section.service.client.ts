@@ -34,4 +34,12 @@ export class SectionServiceClient {
       }
     });
   }
+
+  deleteSection(section) {
+    const url = "http://localhost:4000/api/section/SECTIONID";
+    return fetch(url.replace("SECTIONID", section._id), {
+      method: "DELETE",
+      credentials: 'include'
+    })
+  }
 }

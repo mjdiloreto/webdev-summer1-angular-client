@@ -31,14 +31,12 @@ export class SectionCreatorComponent implements OnInit {
   }
 
   deleteSection(section) {
-    console.log("deleting section");
-    console.log(section);
+    this.service.deleteSection(section)
+      .then(() => this.loadSections(this.courseId));
   }
 
   createSection(sectionName, seats) {
-    this
-      .service
-      .createSection(this.courseId, sectionName, seats)
+    this.service.createSection(this.courseId, sectionName, seats)
       .then(() => this.loadSections(this.courseId));
   }
 

@@ -10,6 +10,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
+
     return fetch('http://localhost:4000/api/login', {
       method: 'post',
       body: JSON.stringify(credentials),
@@ -48,5 +49,16 @@ export class UserServiceClient {
         'content-type': 'application/json'
       }
     });
+  }
+
+  updateUser(user) {
+    return fetch('http://localhost:4000/api/user', {
+      method: "PUT",
+      body: JSON.stringify(user),
+      credentials: 'include', // include, same-origin, *omit
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
   }
 }
