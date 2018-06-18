@@ -14,8 +14,12 @@ export class LoginComponent implements OnInit {
   login(username, password) {
     this.service
       .login(username, password)
-      .then(() => {
-        this.router.navigate(['profile']);
+      .then((loggedIn) => {
+        if(loggedIn) {
+          this.router.navigate(['profile']);
+        } else {
+          alert("Username or password are incorrect.")
+        }
       });
   }
 
