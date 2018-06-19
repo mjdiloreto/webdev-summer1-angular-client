@@ -13,12 +13,13 @@ export class LoginComponent implements OnInit {
   password;
   login(username, password) {
 
-    fetch('http://murmuring-fjord-94630.herokuapp.com/api/login', {
-      method: "POST",
-      body: JSON.stringify({username: username, password: password}),
-      credentials: "include"
-    })
-      .then(resp => resp.json())
+    this.service.login(username, password)
+    // fetch('http://murmuring-fjord-94630.herokuapp.com/api/login', {
+    //   method: "POST",
+    //   body: JSON.stringify({username: username, password: password}),
+    //   credentials: "include"
+    // })
+    //   .then(resp => resp.json())
       .then((loggedIn) => {
         if(loggedIn) {
           this.router.navigate(['profile']);

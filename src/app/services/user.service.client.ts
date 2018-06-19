@@ -17,9 +17,6 @@ export class UserServiceClient {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
-      headers: {
-        'content-type': 'application/json'
-      }
     }).then(response => response.json());
   }
 
