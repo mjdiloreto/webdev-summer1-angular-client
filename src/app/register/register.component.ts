@@ -30,7 +30,8 @@ export class RegisterComponent implements OnInit {
           this.service
             .createUser(username, password)
             .then(() =>
-              this.router.navigate(['profile']));
+              this.router.navigate(['profile']))
+            .catch(resp => alert(resp));
         }
       });
   }

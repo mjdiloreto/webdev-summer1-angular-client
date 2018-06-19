@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
         } else {
           alert("Username or password are incorrect.")
         }
-      });
+      })
+      .catch(resp => alert(resp));
   }
 
   constructor(private router: Router,
