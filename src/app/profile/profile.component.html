@@ -2,6 +2,11 @@
   <app-title-bar></app-title-bar>
   <h1>Profile</h1>
 
+  <button (click)="debug()"
+          class="btn btn-primary btn-block">
+    debug
+  </button>
+
   <input [(ngModel)]="username"
          placeholder="username"
          class="form-control"/>
