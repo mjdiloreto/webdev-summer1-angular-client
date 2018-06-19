@@ -16,9 +16,6 @@ export class LoginComponent implements OnInit {
     fetch('http://murmuring-fjord-94630.herokuapp.com/api/login', {
       method: "POST",
       body: JSON.stringify({username: username, password: password}),
-      headers: {
-        "content-type": "application/json",
-      },
     })
       .then(resp => resp.json())
       .then((loggedIn) => {
