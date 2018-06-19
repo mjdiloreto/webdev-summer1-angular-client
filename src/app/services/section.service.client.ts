@@ -30,10 +30,7 @@ export class SectionServiceClient {
     return fetch(this.SECTION_URL.replace('COURSEID', courseId), {
       method: 'post',
       body: JSON.stringify(section),
-      credentials: 'include',
-      headers: {
-        'content-type': 'application/json'
-      }
+      credentials: 'include'
     });
   }
 

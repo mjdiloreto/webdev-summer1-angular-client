@@ -43,10 +43,7 @@ export class UserServiceClient {
     return fetch(SECTION_API_URL + '/api/user', {
       body: JSON.stringify(user),
       credentials: 'include', // include, same-origin, *omit
-      method: 'post',
-      headers: {
-        'content-type': 'application/json'
-      }
+      method: 'post'
     });
   }
 
@@ -55,9 +52,6 @@ export class UserServiceClient {
       method: "PUT",
       body: JSON.stringify(user),
       credentials: 'include', // include, same-origin, *omit
-      headers: {
-        'content-type': 'application/json'
-      }
     })
   }
 
