@@ -12,8 +12,12 @@ export class LoginComponent implements OnInit {
   username;
   password;
   login(username, password) {
-    this.service
-      .login(username, password)
+
+    fetch('http://murmuring-fjord-94630.herokuapp.com/api/login', {
+      method: "POST",
+      body: JSON.stringify({username: username, password: password})
+    })
+      .then(resp => resp.json())
       .then((loggedIn) => {
         if(loggedIn) {
           this.router.navigate(['profile']);
