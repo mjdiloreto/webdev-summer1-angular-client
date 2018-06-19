@@ -1,9 +1,11 @@
+import {SECTION_API_URL} from "../urls/index";
+
 export class SectionServiceClient {
 
-  SECTION_URL = 'http://localhost:4000/api/course/COURSEID/section';
+  SECTION_URL = SECTION_API_URL + '/api/course/COURSEID/section';
 
   findSectionsForStudent() {
-    const url = 'http://localhost:4000/api/student/section';
+    const url = SECTION_API_URL + '/api/student/section';
     return fetch(url, {
       credentials: 'include'
     })
@@ -11,7 +13,7 @@ export class SectionServiceClient {
   }
 
   enrollStudentInSection(sectionId) {
-    const url = 'http://localhost:4000/api/section/' + sectionId + '/enrollment';
+    const url = SECTION_API_URL + '/api/section/' + sectionId + '/enrollment';
     return fetch(url, {
       method: 'post',
       credentials: 'include'

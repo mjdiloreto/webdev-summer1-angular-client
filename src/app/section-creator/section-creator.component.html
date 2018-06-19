@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h3>{{course.title}}</h3>
   <input [(ngModel)]="sectionName"
-         placeholder="Section Name"
+         placeholder="{{course.title}} Section {{sections.length + 1}}"
          class="form-control">
   <input [(ngModel)]="seats"
          placeholder="Seats available"

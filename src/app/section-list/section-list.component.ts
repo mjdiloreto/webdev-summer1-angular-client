@@ -15,9 +15,7 @@ export class SectionListComponent implements OnInit {
     this.route.params.subscribe(params => this.loadSections(params['courseId']))
   }
 
-  sectionName = '';
-  seats = '';
-  courseId = '';
+  courseId;
   sections = [];
   loadSections(courseId) {
     this.courseId = courseId;
@@ -38,11 +36,15 @@ export class SectionListComponent implements OnInit {
 
   enroll(section) {
     // alert(section._id);
-    this.service
-      .enrollStudentInSection(section._id)
-      .then(() => {
-        this.router.navigate(['profile']);
-      });
+    if (section.seats) {
+      this.service
+        .enrollStudentInSection(section._id)
+        .then(() => {
+          this.router.navigate(['profile']);
+        });
+    } else {
+      alert("you cannot enroll in a section with no seats.")
+    }
   }
 
   ngOnInit() {

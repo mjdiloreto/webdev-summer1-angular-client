@@ -1,5 +1,7 @@
+import {COURSE_API_URL} from "../urls/index";
+
 export class CourseServiceClient {
-  COURSE_URL = 'http://localhost:8080/api/course';
+  COURSE_URL = COURSE_API_URL + '/api/course';
 
   findAllCourses() {
     return fetch(this.COURSE_URL)
