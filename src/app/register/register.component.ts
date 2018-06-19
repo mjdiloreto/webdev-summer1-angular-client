@@ -46,4 +46,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+  debug() {
+    fetch('http://murmuring-fjord-94630.herokuapp.com/api/course/392/section')
+      .then(resp => console.log(resp.json()));
+  }
 }
