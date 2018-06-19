@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
       headers: {
         "content-type": "application/json",
       },
-      credentials: "include"
     })
       .then(resp => resp.json())
       .then((loggedIn) => {
