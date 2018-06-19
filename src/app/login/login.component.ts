@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
           alert("Username or password are incorrect.")
         }
       })
-      .catch(resp => alert(resp));
+      .catch(response => alert(response));
   }
 
   constructor(private router: Router,
