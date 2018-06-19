@@ -47,7 +47,11 @@ export class RegisterComponent implements OnInit {
   }
 
   debug() {
-    fetch('http://murmuring-fjord-94630.herokuapp.com/api/course/392/section')
-      .then(resp => console.log(resp.json()));
+    fetch('http://murmuring-fjord-94630.herokuapp.com/api/login', {
+      method: "POST",
+      body: JSON.stringify({username: "admin", password: "admin"})
+    })
+      .then(resp => resp.json())
+      .then(resp => console.log(resp));
   }
 }
