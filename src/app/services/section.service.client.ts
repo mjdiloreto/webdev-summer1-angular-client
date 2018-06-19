@@ -17,7 +17,7 @@ export class SectionServiceClient {
     return fetch(url, {
       method: 'post',
       credentials: 'include'
-    });
+    }).then(response => response.json());
   }
 
   findSectionsForCourse(courseId) {
@@ -31,7 +31,7 @@ export class SectionServiceClient {
       method: 'post',
       body: JSON.stringify(section),
       credentials: 'include'
-    });
+    }).then(response => response.json());
   }
 
   deleteSection(section) {

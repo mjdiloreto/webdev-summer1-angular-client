@@ -44,15 +44,15 @@ export class UserServiceClient {
       body: JSON.stringify(user),
       credentials: 'include', // include, same-origin, *omit
       method: 'post'
-    });
+    }).then(response => response.json());
   }
 
   updateUser(user) {
     return fetch(SECTION_API_URL + '/api/user', {
       method: "PUT",
       body: JSON.stringify(user),
-      credentials: 'include', // include, same-origin, *omit
-    })
+      credentials: 'include' // include, same-origin, *omit
+    }).then(response => response.json());
   }
 
   findUserByUsername(username) {
