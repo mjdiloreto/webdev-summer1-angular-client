@@ -33,22 +33,6 @@ export class ProfileComponent implements OnInit {
     this.service.updateUser(this.user).then(user => this.user = user);
   }
 
-  debug() {
-
-    this.user.username = this.username;
-    this.user.password = this.password;
-    this.user.firstName = this.firstName;
-    this.user.lastName = this.lastName;
-    this.user.email = this.email;
-
-    fetch('http://murmuring-fjord-94630.herokuapp.com/api/user', {
-      method: "PUT",
-      body: JSON.stringify(this.user)
-    })
-      .then(resp => resp.json())
-      .then(resp => console.log(resp));
-  }
-
   ngOnInit() {
     this.service
       .profile()
