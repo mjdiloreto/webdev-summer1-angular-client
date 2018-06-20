@@ -17,6 +17,9 @@ export class UserServiceClient {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
+      headers: {
+        'content-type': 'application/json'
+      }
     }).then(response => response.json());
   }
 
@@ -43,7 +46,10 @@ export class UserServiceClient {
     return fetch(SECTION_API_URL + '/api/user', {
       body: JSON.stringify(user),
       credentials: 'include', // include, same-origin, *omit
-      method: 'post'
+      method: 'post',
+      headers: {
+        'content-type': 'application/json'
+      }
     }).then(response => response.json());
   }
 
@@ -51,7 +57,10 @@ export class UserServiceClient {
     return fetch(SECTION_API_URL + '/api/user', {
       method: "PUT",
       body: JSON.stringify(user),
-      credentials: 'include' // include, same-origin, *omit
+      credentials: 'include', // include, same-origin, *omit
+      headers: {
+        'content-type': 'application/json'
+      }
     }).then(response => response.json());
   }
 
